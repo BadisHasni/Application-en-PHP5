@@ -1,0 +1,111 @@
+<?php session_start(); ?>
+
+
+<!DOCTYPE html>
+<title>Elegant Press | Typography</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../View/template2/styles/elegant-press.css" type="text/css" />
+<script src="../View/template2/scripts/elegant-press.js" type="text/javascript"></script>
+<!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
+</head>
+<body>
+<?php
+
+if(isset($_SESSION['login_user']))
+{
+    
+?>
+
+
+<div class="main-container">
+  <header>
+  <div id="logo">
+
+<!--<img src="template2/images/top_logo.png" >-->
+  </div>
+  <div id="wrapper">
+			<h1><a href="index.php">Equipe EDA</a></h1>
+		</div>
+  <p id="tagline"><strong>TELNET</strong></p>
+  </header>
+</div>
+<div class="main-container">
+  <div id="sub-headline">
+    <div class="tagline_left"><p id="tagline2">Tel: 333 4444 | Mail: <a href="mailto:email@website.com">email@website.com</a></p></div>
+    <div class="tagline_right">
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Site Search</legend>
+          <table class="table1">
+						
+						<form action="../../deconnexion.php" method="POST">
+						<?php 
+						 ?> <tr>
+							<td>
+						 <h6><?php echo  ' Bienvenue ' . $_SESSION['login_user'] ;
+						?></h6></td>
+						<td>
+						     <input type="submit" id="go" value="Deconnexion" /></td>
+							 
+						</form>
+						
+						</table>
+		</fieldset>
+      </form>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+
+ <div id="nav-container">
+   <nav> 
+    <ul class="nav">
+      <li class="active"><a href="index.php">Accueil</a></li>
+      <li><a href="#">Membre</a>
+	   <ul>
+          <li><a href="ajouter_membre.php">Ajouter Membre</a></li>
+		  <li><a href="typo.php">Consulter Membre</a></li>
+          </ul>
+	  
+	  </li>
+      <li><a href="#"><Strong><h5>Familles</h5></Strong></a>
+    <ul>
+          <li>
+			  <a href="#">Capacitor</a>
+			  <ul>
+			  <li><a href="Famille/Capacitor/Ajouter_capacitor.php">Ajouter composant</a></li>
+			  <li><a href="Famille/Capacitor/Consulter_capacitor.php">Consulter composant</a></li>
+			  </ul>
+         </li>
+		 
+		    <li>
+			  <a href="#">Connectors</a>
+			  <ul>
+			  <li><a href="right_sidebar.html">Ajouter composant</a></li>
+			  <li><a href="right_sidebar.html">Consulter composant</a></li>
+			  </ul>
+         </li>
+		 
+		   <li>
+			  <a href="#">Crystals</a>
+			  <ul>
+			  <li><a href="right_sidebar.html">Ajouter composant</a></li>
+			  <li><a href="right_sidebar.html">Consulter composant</a></li>
+			  </ul>
+         </li>
+		 
+   </nav> 
+    <div class="clear"></div>
+  </div>
+
+
+<br />
+</body>
+
+<?php 
+	}
+	else{
+	 header('Location:../../Employe/index.php');
+        }
+		?>
+</html>
